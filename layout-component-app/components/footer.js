@@ -2,21 +2,22 @@ import React, {useState} from "react";
 import Link from 'next/link';
 import Image from 'next/image'
 import logo from '../public/assets/logo.png'
-import Nav from 'react-bootstrap/Nav'
-import Navbar from 'react-bootstrap/Navbar'
-import NavDropdown from 'react-bootstrap/NavDropdown'
+
 
 export default function footer () {
 
     return (
-        <footer className="bg-transparent text-center text-lg-start">
+        <footer className="footer bg-transparent text-center text-lg-start">
   <div className="container p-4">
     
-    <div className="row">
+    <div className="row links-row">
 
       <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
     
         <ul className="list-unstyled mb-0">
+        <li>
+            <a href="#!" className="footer-active">Fake Site</a>
+          </li>
           <li>
             <a href="#!" className="text-dark">About us</a>
           </li>
@@ -34,7 +35,10 @@ export default function footer () {
 
       <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
         <ul className="list-unstyled">
-        <li>
+          <li>
+            <a href="#!" className="footer-active">Account</a>
+          </li>
+          <li>
             <a href="#!" className="text-dark">Edit Profile</a>
           </li>
           <li>
@@ -52,19 +56,26 @@ export default function footer () {
     </div>
  
   </div>
-  <div className = "footer-logo text-center p-3">
-          <Link href="/">
-            <a className="navbar-brand">
-              <Image className = "logo" src={logo} />  
-            </a>
-            </Link>
-            <span>
-              <ul className="list-unstyled footer-list">
+  <div className = "footer-bottom text-center p-3 container">
+    <div className = 'row'>
+           <div className ='col footer-logo'>
+                <Link href="/">
+                  <a className="navbar-brand">
+                 <Image className = "logo" src={logo} />  
+                 </a>
+               </Link>
+            </div>
+            <div className = 'col-md-9'>
+              
+            </div>
+            <div className = "col" >
+              <ul className="list-unstyled footer-list ">
                   <li>Terms</li>
                   <li>Policy</li>
                   <li>Site Map</li>
               </ul>
-          </span>
+          </div>
+        </div>
     </div>
 </footer>
     )

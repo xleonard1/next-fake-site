@@ -1,28 +1,208 @@
-
-
 html {
     scroll-behavior: smooth;
 }
+p {
+    font-size: 22px;
+    line-height: 36px;
+    color: #4C4C51;
+}
+
+a:hover {
+    color: #4C4C51;
+    
+}
+
+#navbarText {
+   justify-content: flex-end;
+}
+
+.nav-content {
+    background-color: inherit !important;
+    transition: background-color 200ms linear;
+}
+
+.navbarLinks {
+    justify-content: space-between;
+}
+.navbarLinks li {
+    margin-left : 1em;
+    margin-right : 1em;
+}
+
+
 
 #intro-example {
-    height: 100vh;
+    height: 100vw;
+    margin-right: -15px;
+    overflow: hidden;
     background-image: url('../public/assets/hero-image.png') ;
     background-position: center;
     background-repeat: no-repeat;
-    margin-top: -110px;
+    justify-content: center;
+    
    
- 
+}
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited  {
+    background-color: #EE2D1C !important;
+    border-color: #EE2D1C !important
+}
+
+.jumbo-title {
+    margin-top: 30%;
+}
+
+
+
+.text-container {
+   text-align: center;
+}
+
+
+.footer a {
+    text-decoration: none;
+    
 }
 
 .footer-logo {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border-top: solid;
+    margin-left: -80px;
 }
 
+.footer-bottom {
+border-top: solid;
+}
 .footer-list {
-    display: flex;
-    flex: row;
-    justify-content: space-between;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   margin-right: -30px;
+}
+
+
+.video-container {
+   margin-top: 10px;
+   margin-bottom: 70px;
+}
+.video-card {
+   border-radius: 5px;
+   margin-left: 30px;
+  
+}
+.video-img-overlay {
+   background:  rgb(35,79,109);
+   background: linear-gradient(0deg, hsl(5, 86%, 52%)) 0%, hsl(357, 100%, 85%) 100%; 
+   z-index: 2; 
+}
+
+.footer-active {
+    font-weight: 700;
+    color: #EE2D1C;
+}
+
+
+
+
+
+@media (min-width:900px) {
+    @media (min-width: 600px) {
+        html {
+            scroll-behavior: smooth;
+        }
+        p {
+            font-size: 22px;
+            line-height: 36px;
+            color: #4C4C51;
+        }
+        
+        a:hover {
+            color: #4C4C51;
+            
+        }
+
+        #navbarText {
+           justify-content: flex-end;
+        }
+
+        .nav-content {
+            background-color: inherit !important;
+            transition: background-color 200ms linear;
+        }
+
+        .navbarLinks {
+            justify-content: space-between;
+        }
+        .navbarLinks li {
+            margin-left : 1em;
+            margin-right : 1em;
+        }
+        
+       
+       
+        #intro-example {
+            height: 100vh;
+            overflow: hidden;
+            background-image: url('../public/assets/hero-image.png') ;
+            background-position: center;
+            background-repeat: no-repeat;
+            justify-content: center;
+            margin-top: -150px;
+           
+        }
+        .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited  {
+            background-color: #EE2D1C !important;
+            border-color: #EE2D1C !important
+        }
+        
+        .jumbo-title {
+            margin-top: 50%;
+        }
+        .jumbo-p {
+            inline-size:500px;
+        }
+        
+
+        .text-container {
+           text-align: left;
+        }
+       
+
+        .footer a {
+            text-decoration: none;
+            
+        }
+
+        .footer-logo {
+            margin-left: -80px;
+        }
+    
+       .footer-bottom {
+        border-top: solid;
+       }
+       .footer-list {
+           display: flex;
+           flex-direction: row;
+           justify-content: space-evenly;
+           margin-right: -30px;
+       }
+      
+       
+       .video-container {
+           margin-top: 10px;
+           margin-bottom: 100px;
+       }
+       .video-card {
+           border-radius: 5px;
+          
+        }
+        .video-img-overlay {
+           background:  rgb(35,79,109);
+           background: linear-gradient(0deg, hsl(5, 86%, 52%)) 0%, hsl(357, 100%, 85%) 100%; 
+           z-index: 2; 
+        }
+
+       .footer-active {
+            font-weight: 700;
+            color: #EE2D1C;
+        }
+
+    }
 }

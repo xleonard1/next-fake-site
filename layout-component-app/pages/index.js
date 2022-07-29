@@ -9,22 +9,36 @@ import Hero from '../components/Hero'
 
 
 
-export default function Home(props) {
-  
+
+export default function Home({data}) {
   return (
     <Layout>
-        <Hero />
-        <About/>
+        <Hero/>
+        <About props = {data}/>
      
       
     </Layout>
   )
 }
 
+export async function getStaticProps() {
+  // Fetch data from external API
+  const res = await fetch(`https://vimeo.com/api/v2/channel/staffpicks/videos.json`)
+  const data = await res.json()
+
+  // Pass data to the page via props
+  return { 
+    props: { 
+      data, 
+    },
+  }
+}
+
 Home.getLayout = function getLayout(page) {
   return (
     <Layout>
       <Navbar />
+      
       {page}
     </Layout>
   )

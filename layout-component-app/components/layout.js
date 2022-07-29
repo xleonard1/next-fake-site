@@ -1,7 +1,9 @@
 import Head from 'next/head'
-import styles from './layout.module.css'
+import './layout.module.css'
 import Navbar from './navbar'
 import Footer from './footer'
+
+
 
 export default function Layout({ children }) {
   return (
@@ -10,7 +12,9 @@ export default function Layout({ children }) {
         <title>Fake Page</title>
       </Head>
       <Navbar/>
-      <main className={styles.main}>{children}</main>
+      <main className = 'style-container' >{children} 
+    
+      </main>
       <Footer/>
      
     </>
