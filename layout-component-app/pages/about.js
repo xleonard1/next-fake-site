@@ -10,8 +10,6 @@ import React, {useState, useEffect} from 'react'
 
 const About= function(props){
   
-  
-  console.log(props.props)
   let id = props.props[1].id
   let description = props.props[1].description
 
