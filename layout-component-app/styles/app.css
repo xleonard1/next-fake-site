@@ -1,0 +1,28 @@
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+#intro-example {
+    height: 100vh;
+    background-image: url('../public/assets/hero-image.png') ;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: -110px;
+   
+ 
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: solid;
+}
+
+.footer-list {
+    display: flex;
+    flex: row;
+    justify-content: space-between;
+}
