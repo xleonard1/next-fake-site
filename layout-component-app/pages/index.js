@@ -4,6 +4,7 @@ import Navbar from '../components/navbar'
 import About from './about'
 import Contact from './contact'
 import Hero from '../components/Hero'
+import App from '../components/picture'
 
 
 
@@ -11,10 +12,12 @@ import Hero from '../components/Hero'
 
 
 export default function Home({data}) {
+ ;
   return (
     <Layout>
         <Hero/>
         <About props = {data}/>
+        
      
       
     </Layout>
@@ -23,6 +26,14 @@ export default function Home({data}) {
 
 export async function getStaticProps() {
   // Fetch data from external API
+  const results = await fetch(`https://@api.cloudinary.com/v1_1/${process.env.CLOUDINARY_CLOUD_NAME}/resources/image`, {
+   headers: {
+     Authorization:`Basic ${Buffer.from(process.env.CLOUDINARY_API_KEY + ':' + ProcessingInstruction.ENV.CLOUDINARY_API_SECRET).toString('base64')}`
+   }
+  }).then(r => r.json());
+
+  console.log(results)
+  
   const res = await fetch(`https://vimeo.com/api/v2/channel/staffpicks/videos.json`)
   const data = await res.json()
 
@@ -30,9 +41,12 @@ export async function getStaticProps() {
   return { 
     props: { 
       data, 
+      results,
     },
   }
 }
+
+
 
 Home.getLayout = function getLayout(page) {
   return (

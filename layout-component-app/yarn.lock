@@ -9,6 +9,30 @@
   dependencies:
     "regenerator-runtime" "^0.13.4"
 
+"@cloudinary/html@^1.4.1":
+  "integrity" "sha512-7P7Iu+SuwEXGugHpcXvOfDIGL655jtOre9Hs/faG4tIzCIPHIZuL8wPSslx0zm2uIE5aHbBLIacvBBMSSZ/+OA=="
+  "resolved" "https://registry.npmjs.org/@cloudinary/html/-/html-1.4.1.tgz"
+  "version" "1.4.1"
+  dependencies:
+    "@types/lodash.clonedeep" "^4.5.6"
+    "@types/lodash.debounce" "^4.0.6"
+    "@types/node" "^14.14.10"
+    "lodash.clonedeep" "^4.5.0"
+    "lodash.debounce" "^4.0.8"
+    "typescript" "^4.1.2"
+
+"@cloudinary/react@^1.4.1":
+  "integrity" "sha512-MRlfZQJo8BpQsNkbc8d5rSXBbCWQSxBs+8lnzV6JvPJo6IV4EUm+tTs8xDtWZBG+S5X+iJ8p1ilUBlljbtbqiw=="
+  "resolved" "https://registry.npmjs.org/@cloudinary/react/-/react-1.4.1.tgz"
+  "version" "1.4.1"
+  dependencies:
+    "@cloudinary/html" "^1.4.1"
+
+"@cloudinary/url-gen@^1.8.0":
+  "integrity" "sha512-sSbLY3i/FZ+yHAinVbTzUjIzFGsnpYajWTLG+dc/80GbSfODuxZ0OyXp2kOxtf7MUyx5y998BIa8ketnVr7chA=="
+  "resolved" "https://registry.npmjs.org/@cloudinary/url-gen/-/url-gen-1.8.0.tgz"
+  "version" "1.8.0"
+
 "@next/env@12.2.3":
   "integrity" "sha512-2lWKP5Xcvnor70NaaROZXBvU8z9mFReePCG8NhZw6NyNGnPvC+8s+Cre/63LAB1LKzWw/e9bZJnQUg0gYFRb2Q=="
   "resolved" "https://registry.npmjs.org/@next/env/-/env-12.2.3.tgz"
@@ -59,6 +83,30 @@
   "version" "0.4.3"
   dependencies:
     "tslib" "^2.4.0"
+
+"@types/lodash.clonedeep@^4.5.6":
+  "integrity" "sha512-ccNqkPptFIXrpVqUECi60/DFxjNKsfoQxSQsgcBJCX/fuX1wgyQieojkcWH/KpE3xzLoWN/2k+ZeGqIN3paSvw=="
+  "resolved" "https://registry.npmjs.org/@types/lodash.clonedeep/-/lodash.clonedeep-4.5.7.tgz"
+  "version" "4.5.7"
+  dependencies:
+    "@types/lodash" "*"
+
+"@types/lodash.debounce@^4.0.6":
+  "integrity" "sha512-X1T4wMZ+gT000M2/91SYj0d/7JfeNZ9PeeOldSNoE/lunLeQXKvkmIumI29IaKMotU/ln/McOIvgzZcQ/3TrSA=="
+  "resolved" "https://registry.npmjs.org/@types/lodash.debounce/-/lodash.debounce-4.0.7.tgz"
+  "version" "4.0.7"
+  dependencies:
+    "@types/lodash" "*"
+
+"@types/lodash@*":
+  "integrity" "sha512-/THyiqyQAP9AfARo4pF+aCGcyiQ94tX/Is2I7HofNRqoYLgN1PBoOWu2/zTA5zMxzP5EFutMtWtGAFRKUe961Q=="
+  "resolved" "https://registry.npmjs.org/@types/lodash/-/lodash-4.14.182.tgz"
+  "version" "4.14.182"
+
+"@types/node@^14.14.10":
+  "integrity" "sha512-qzaYbXVzin6EPjghf/hTdIbnVW1ErMx8rPzwRNJhlbyJhu2SyqlvjGOY/tbUt6VFyzg56lROcOeSQRInpt63Yw=="
+  "resolved" "https://registry.npmjs.org/@types/node/-/node-14.18.22.tgz"
+  "version" "14.18.22"
 
 "@types/prop-types@*":
   "integrity" "sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w=="
@@ -119,6 +167,19 @@
   "resolved" "https://registry.npmjs.org/classnames/-/classnames-2.3.1.tgz"
   "version" "2.3.1"
 
+"cloudinary-core@^2.13.0":
+  "integrity" "sha512-Nt0Q5I2FtenmJghtC4YZ3MZZbGg1wLm84SsxcuVwZ83OyJqG9CNIGp86CiI6iDv3QobaqBUpOT7vg+HqY5HxEA=="
+  "resolved" "https://registry.npmjs.org/cloudinary-core/-/cloudinary-core-2.13.0.tgz"
+  "version" "2.13.0"
+
+"cloudinary-react@^1.8.1":
+  "integrity" "sha512-90LHbUPfB8Uj5tKY08+ladN8ONyfak8zjnlAgVc39vlxKCx3b9G0/+I5C1QQGDwBRqHKzxyXterfugbWUrCQhA=="
+  "resolved" "https://registry.npmjs.org/cloudinary-react/-/cloudinary-react-1.8.1.tgz"
+  "version" "1.8.1"
+  dependencies:
+    "cloudinary-core" "^2.13.0"
+    "prop-types" "^15.8.1"
+
 "combined-stream@^1.0.8":
   "integrity" "sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg=="
   "resolved" "https://registry.npmjs.org/combined-stream/-/combined-stream-1.0.8.tgz"
@@ -174,6 +235,21 @@
   "integrity" "sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ=="
   "resolved" "https://registry.npmjs.org/js-tokens/-/js-tokens-4.0.0.tgz"
   "version" "4.0.0"
+
+"lodash.clonedeep@^4.5.0":
+  "integrity" "sha512-H5ZhCF25riFd9uB5UCkVKo61m3S/xZk1x4wA6yp/L3RFP6Z/eHH1ymQcGLo7J3GMPfm0V/7m1tryHuGVxpqEBQ=="
+  "resolved" "https://registry.npmjs.org/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz"
+  "version" "4.5.0"
+
+"lodash.debounce@^4.0.8":
+  "integrity" "sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow=="
+  "resolved" "https://registry.npmjs.org/lodash.debounce/-/lodash.debounce-4.0.8.tgz"
+  "version" "4.0.8"
+
+"lodash@>=4.0":
+  "integrity" "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="
+  "resolved" "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
+  "version" "4.17.21"
 
 "loose-envify@^1.0.0", "loose-envify@^1.1.0", "loose-envify@^1.4.0":
   "integrity" "sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q=="
@@ -308,7 +384,7 @@
     "loose-envify" "^1.4.0"
     "prop-types" "^15.6.2"
 
-"react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0-rc.1 || ^18.0.0", "react@^17.0.2", "react@^17.0.2 || ^18.0.0-0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=0.14.0", "react@>=15.0.0", "react@>=16.14.0", "react@>=16.6.0", "react@>=16.8.0", "react@17.0.2":
+"react@^16.3.0 || ^17.0.0 || ^18.0.0", "react@^16.3.3 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0-rc.1 || ^18.0.0", "react@^17.0.2", "react@^17.0.2 || ^18.0.0-0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=0.14.0", "react@>=15.0.0", "react@>=16.14.0", "react@>=16.6.0", "react@>=16.8.0", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"
@@ -343,6 +419,11 @@
   "integrity" "sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ=="
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.4.0.tgz"
   "version" "2.4.0"
+
+"typescript@^4.1.2":
+  "integrity" "sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ=="
+  "resolved" "https://registry.npmjs.org/typescript/-/typescript-4.7.4.tgz"
+  "version" "4.7.4"
 
 "uncontrollable@^7.2.1":
   "integrity" "sha512-svtcfoTADIB0nT9nltgjujTi7BzVmwjZClOmskKu/E8FW9BXzg9os8OLr4f8Dlnk0rYWJIWr4wv9eKUXiQvQwQ=="
