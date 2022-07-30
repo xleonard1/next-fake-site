@@ -1,31 +1,97 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
+import { checkPassword, validateEmail } from '../utils/helpers';
+
+if (req.method === 'POST') {
+  // Check if name, email or password is provided
+  const { email, password } = req.body;
+  if (email && password) {
+      try {
+        let userData = User.findOne({email: req.body.email})
+       
+         if (!userData) {
+           res
+            .status(400)
+            .json({ message: 'Incorrect email or password, please try again' });
+           return;
+         }
+         const correctPw = await user.isCorrectPassword(password);
+
+       if (!correctPassword) {
+         res
+           .status(400)
+           .json({ message: 'Incorrect email or password, please try again' });
+         return;
+        }
+        
+
+      req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+    
+    res.json({ user: userData, message: 'You are now logged in!' });
+  });
+      } catch (error) {
+        return res.status(500).send(error.message);
+      }
+    } else {
+      res.status(422).send('data_incomplete');
+    }
+} else {
+  res.status(422).send('req_method_not_supported');
+};
+
 
 export default function Login() {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    // const [data, setData] = useState(null)
 
-    // Handles the submit event on form submit.
-    const handleSubmit = async (event) => {
-      // Stop the form from submitting and refreshing the page.
-      event.preventDefault()
+    const handleInputChange = (e) => {
+      const { target } = e;
+      const inputType = target.name;
+      const inputValue = target.value;
   
-      const email = document.querySelector('#email-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
-  
-    if (email && password) {
-      // Send a POST request to the API endpoint
-      const response = await fetch('/api/user/login', {
-        method: 'POST',
-        body: JSON.stringify({ email, password }),
-        headers: { 'Content-Type': 'application/json' },
-      });
-  
-      if (response.ok) {
-        // If successful, redirect the browser to the profile page
-        document.location.replace('/profile');
+      // Based on the input type, we set the state of either email, username, and password
+      if (inputType === 'email') {
+        setEmail(inputValue);
       } else {
-        alert(response.statusText);
+        setPassword(inputValue);
       }
     }
+    const handleFormSubmit = (e) => {
+      e.preventDefault();
+
+    // First we check to see if the email is not valid or if the userName is empty. If so we set an error message to be displayed on the page.
+    if (!validateEmail(email)) {
+      setErrorMessage('invalid inputs');
+      // We want to exit out of this code block if something is wrong so that the user can correct it
+      return;
+      // Then we check to see if the password is not valid. If so, we set an error message regarding the password.
     }
+    if (!checkPassword(password)) {
+      setErrorMessage(
+        `choose correct password`
+      );
+      return;
+    }
+
+    // If everything goes according to plan, we want to clear out the input after a successful registration.
+    setPassword('');
+    setEmail('');
+    };
+
+    // const [isLoading, setLoading] = useState(false)
+  
+    // useEffect(() => {
+    //   setLoading(true)
+    //   fetch('/api/user/id')
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //       setData(data)
+    //       setLoading(false)
+    //     })
+    // }, [])
+
     return (
         <div className = "form-container container">
         <div className="row">
@@ -35,14 +101,30 @@ export default function Login() {
     <form  action="/api/user/id" method="post" className="form login-form">
       <div className="form-group">
         <label htmlFor="email-login">email:</label>
-        <input className="form-input" type="text" id="email-login" />
+        <input 
+          className="form-input" 
+          type="text" 
+          id="email-login" 
+          value={email}
+          name="email"
+          onChange={handleInputChange}
+          type="text"
+          placeholder="email"/>
       </div>
       <div className="form-group">
         <label htmlFor="password-login">password:</label>
-        <input className="form-input" type="password" id="password-login" />
+        <input 
+        className="form-input" 
+         type="password" 
+         id="password-login"
+         value={password}
+         name="lastName"
+         onChange={handleInputChange}
+         type="text"
+         placeholder="password" />
       </div>
       <div className="form-group">
-        <button className="btn btn-primary" type="submit">login</button>
+        <button className="btn btn-primary" type="submit" onClick={handleFormSubmit}>login</button>
       </div>
     </form>
   </div>
