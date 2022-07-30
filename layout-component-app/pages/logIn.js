@@ -32,7 +32,7 @@ export default function Login() {
   <div className="col-md-6">
     <h2>Login</h2>
 
-    <form onSubmit={handleSubmit} action="/api/user/id" method="post" className="form login-form">
+    <form  action="/api/user/id" method="post" className="form login-form">
       <div className="form-group">
         <label htmlFor="email-login">email:</label>
         <input className="form-input" type="text" id="email-login" />

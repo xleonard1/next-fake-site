@@ -1,7 +1,7 @@
-import connectDB from '../../lib/dbConnect'
+import connectDB from '../../lib/dbConnect';
 import User from '../../models/user';
 
-export default async function handler (req, res) {
+const  handler = async (req, res) => {
   if(req.method === 'GET') {
     try {
       const users = await User.find({})
@@ -19,7 +19,7 @@ export default async function handler (req, res) {
     const { name, email, password } = req.body;
     if (name && email && password) {
         try {
-          // Hash password to store it in DB
+          
           
           let user = new User({
             name,
@@ -42,3 +42,4 @@ export default async function handler (req, res) {
 
 };
 
+export default connectDB(handler)

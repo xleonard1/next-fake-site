@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 
-let Schema = mongoose.Schema;
+var Schema = mongoose.Schema;
 
 var user = new Schema(
   {

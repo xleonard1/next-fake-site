@@ -4,8 +4,7 @@ import Navbar from '../components/navbar'
 import About from './about'
 import Contact from './contact'
 import Hero from '../components/Hero'
-import connectDB from '../lib/dbConnect';
-import User from '../models/user'
+
 
 
 
