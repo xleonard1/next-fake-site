@@ -3,7 +3,8 @@ import mongoose from 'mongoose';
 
 let Schema = mongoose.Schema;
 
-var user = new Schema({
+var user = new Schema(
+  {
   name: {
     type: String,
     required: true
@@ -21,7 +22,14 @@ var user = new Schema({
     type: Date,
     default: Date.now
   }
-});
+ },
+ {
+  toJSON: {
+    getters: true,
+  },
+  id: false,
+ }
+);
 
 
 

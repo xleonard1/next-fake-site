@@ -12,14 +12,7 @@ export default async function handler (req, res) {
     }
  };
 
- if(req.method === 'GET') {
-   try {
-      let users = await User.findOne({ _id: req.params.studentId})
-      res.status(200).json({success: true, data: users})
-   } catch (error) {
-      res.status(400).json({success: false})
-   }
- }
+
 
   if (req.method === 'POST') {
     // Check if name, email or password is provided
