@@ -19,10 +19,10 @@ const About= function(props){
 // let id = videos[1].id
 return (
   <div>
-   <div className="video-container container">
+   <div className="video-container container justify-content-between">
      <div className="row">
 
-       <div className="text-container col">
+       <div className="text-container col-8">
          <h2>{props.props[1].title}</h2>
          <p>{description}</p>
        </div> 
