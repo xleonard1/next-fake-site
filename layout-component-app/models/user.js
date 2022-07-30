@@ -1,5 +1,7 @@
 import mongoose from 'mongoose';
-var Schema = mongoose.Schema;
+
+
+let Schema = mongoose.Schema;
 
 var user = new Schema({
   name: {
@@ -8,7 +10,8 @@ var user = new Schema({
   },
   email: {
     type: String,
-    required: true
+    required: true,
+    match: [/.+@.+\..+/, 'Must use a valid email address'],
   },
   password: {
     type: String,
@@ -19,6 +22,8 @@ var user = new Schema({
     default: Date.now
   }
 });
+
+
 
 mongoose.models = {};
 
