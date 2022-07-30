@@ -24,7 +24,7 @@ export default function Navigation () {
           <Nav className="me-auto">
           </Nav>
           <Nav>
-          <Nav.Link href="/login">Account</Nav.Link>
+          <Nav.Link href="/logIn">Account</Nav.Link>
           <Nav.Link href="/">Help</Nav.Link>
             
           </Nav>

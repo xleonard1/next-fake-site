@@ -205,4 +205,40 @@ border-top: solid;
         }
 
     }
+    .signup-form {
+        margin-left: 20%;
+    }
+    .signup-form-title {
+        margin-left: 20%;
+    }
+    .form-container {
+        margin: 20px;
+        padding: 10px
+    }
+    form {
+        width: 60%;
+      }
+      
+      form .form-group {
+        display: block;
+        width: 100%;
+        margin: 0.625rem 0;
+      }
+      
+      form .form-input,
+      form .form-textarea {
+        display: block;
+      }
+      
+      
+      form .form-input {
+        width: 100%;
+        padding: 0.75rem;
+        color: #1a1a1a;
+        background-color: #ffffff;
+        margin: 0.625rem 0;
+        font-size: 1.2rem;
+        border: 1px solid #484848;
+        border-radius: 0.3rem;
+      }
 }

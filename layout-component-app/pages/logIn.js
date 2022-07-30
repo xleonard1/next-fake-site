@@ -2,6 +2,7 @@ import React from 'react'
 
 export default function Login() {
     return (
+        <div className = "form-container container">
         <div className="row">
   <div className="col-md-6">
     <h2>Login</h2>
@@ -20,10 +21,10 @@ export default function Login() {
       </div>
     </form>
   </div>
-  <div className="col-md-6">
-    <h2>Signup</h2>
+  <div className="col-md-6 ">
+    <h2 className='signup-form-title'>Signup</h2>
 
-    <form className="form signup-form">
+    <form className="form signup-form ">
       <div className="form-group">
         <label for="name-signup">Username:</label>
         <input className="form-input" type="text" id="name-signup" placeholder="Username"/>
@@ -53,6 +54,7 @@ export default function Login() {
       </div>
     </form>
   </div>
+</div>
 </div>
 
     )
