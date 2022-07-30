@@ -1,19 +1,27 @@
-import mongoose from 'mongoose'
+import mongoose from 'mongoose';
+var Schema = mongoose.Schema;
 
-
-const UserSchema = new mongoose.Schema({
-  
+var user = new Schema({
   name: {
     type: String,
-    required: true,
+    required: true
   },
   email: {
     type: String,
-    required: true,
-    unique: true,
-    match: [/.+@.+\..+/, 'Must match an email address!'],
+    required: true
   },
+  password: {
+    type: String,
+    required: true
+  },
+  since: {
+    type: Date,
+    default: Date.now
+  }
+});
 
-})
+mongoose.models = {};
 
-export default mongoose.models.User || mongoose.model('Pet', UserSchema)
+var User = mongoose.model('User', user);
+
+export default User;
