@@ -2,6 +2,7 @@
 import React from 'react'
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar'
+import NavLink from 'react-bootstrap/NavLink';
 import Image  from 'next/image';
 import Container from 'react-bootstrap/Container'
 import logo from '../public/assets/logo.png'
@@ -15,17 +16,17 @@ export default function Navigation () {
         <Navbar fixed="top" collapseOnSelect expand="lg" bg="inherit" variant="light">
       <Container>
         <Navbar.Brand href="#">
-          <Nav.Link href="#about"> 
+          <NavLink href = "about"> 
             <Image className = "logo" src={logo} />
-          </Nav.Link>
+          </NavLink>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
           </Nav>
           <Nav>
-          <Nav.Link href="/logIn">Account</Nav.Link>
-          <Nav.Link href="/">Help</Nav.Link>
+          <NavLink href="/logIn">Account</NavLink>
+          <NavLink href="/">Help</NavLink>
             
           </Nav>
         </Navbar.Collapse>

@@ -59,10 +59,8 @@ export default function footer () {
   <div className = "footer-bottom text-center p-3 container">
     <div className = 'row'>
            <div className ='col footer-logo'>
-                <Link href="/">
-                  <a className="navbar-brand">
+                <Link href="/" className="navbar-brand">
                  <Image className = "logo" src={logo} />  
-                 </a>
                </Link>
             </div>
             <div className = 'col-md-9'>

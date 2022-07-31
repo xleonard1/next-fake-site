@@ -189,8 +189,25 @@ border-top: solid;
            margin-top: 10px;
            margin-bottom: 100px;
        }
-       .video-card {
+       .example iframe {
+        width: 100%;
+        position: relative;
+      }
+      
+      .example .overlay {
+        background:  #EE2D1C;
+        background: linear-gradient(0deg, hsl(5, 86%, 52%)) 0%, hsl(357, 100%, 85%) 100%; 
+        background-image: url('../public/assets/stockimage.png');
+        z-index: 2; 
+        position: absolute;
+        right:25%;
+        top:90%;
+    
+      }
+       
+       iframe {
            border-radius: 5px;
+           min-width: 516px !important;
           
         }
         .video-img-overlay {

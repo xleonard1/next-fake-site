@@ -1,61 +1,33 @@
 import React, {useEffect, useState} from 'react'
 import { checkPassword, validateEmail } from '../utils/helpers';
-
-if (req.method === 'POST') {
-  // Check if name, email or password is provided
-  const { email, password } = req.body;
-  if (email && password) {
-      try {
-        let userData = User.findOne({email: req.body.email})
-       
-         if (!userData) {
-           res
-            .status(400)
-            .json({ message: 'Incorrect email or password, please try again' });
-           return;
-         }
-         const correctPw = await user.isCorrectPassword(password);
-
-       if (!correctPassword) {
-         res
-           .status(400)
-           .json({ message: 'Incorrect email or password, please try again' });
-         return;
-        }
-        
-
-      req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
-    
-    res.json({ user: userData, message: 'You are now logged in!' });
-  });
-      } catch (error) {
-        return res.status(500).send(error.message);
-      }
-    } else {
-      res.status(422).send('data_incomplete');
-    }
-} else {
-  res.status(422).send('req_method_not_supported');
-};
-
+import User from '../models/user'
 
 export default function Login() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [name, setName] = useState('')
+    const [newEmail, setNewEmail] = useState('')
+    const [newPassword, setNewPassword] = useState('')
     // const [data, setData] = useState(null)
 
     const handleInputChange = (e) => {
       const { target } = e;
-      const inputType = target.name;
+      const inputType = target.id;
       const inputValue = target.value;
   
       // Based on the input type, we set the state of either email, username, and password
-      if (inputType === 'email') {
+      if (inputType === 'email-login') {
         setEmail(inputValue);
-      } else {
-        setPassword(inputValue);
+      } else if (inputType === 'password-login'){
+        setPassword(inputValue)
+      }
+
+      if(inputType === 'name-register') {
+        setName(inputValue)
+      } else if (inputType === 'email-signup') {
+        setNewEmail(inputValue)
+      } else if(inputType === 'password-signup'){
+        setNewPassword(inputValue)
       }
     }
     const handleFormSubmit = (e) => {
@@ -78,19 +50,9 @@ export default function Login() {
     // If everything goes according to plan, we want to clear out the input after a successful registration.
     setPassword('');
     setEmail('');
+    setName('')
     };
 
-    // const [isLoading, setLoading] = useState(false)
-  
-    // useEffect(() => {
-    //   setLoading(true)
-    //   fetch('/api/user/id')
-    //     .then((res) => res.json())
-    //     .then((data) => {
-    //       setData(data)
-    //       setLoading(false)
-    //     })
-    // }, [])
 
     return (
         <div className = "form-container container">
@@ -98,7 +60,7 @@ export default function Login() {
   <div className="col-md-6">
     <h2>Login</h2>
 
-    <form  action="/api/user/id" method="post" className="form login-form">
+    <form  action="/api/user/login" method="post" className="form login-form">
       <div className="form-group">
         <label htmlFor="email-login">email:</label>
         <input 
@@ -108,7 +70,6 @@ export default function Login() {
           value={email}
           name="email"
           onChange={handleInputChange}
-          type="text"
           placeholder="email"/>
       </div>
       <div className="form-group">
@@ -118,9 +79,8 @@ export default function Login() {
          type="password" 
          id="password-login"
          value={password}
-         name="lastName"
+         name="password"
          onChange={handleInputChange}
-         type="text"
          placeholder="password" />
       </div>
       <div className="form-group">
@@ -131,28 +91,35 @@ export default function Login() {
   <div className="col-md-6 ">
     <h2 className='signup-form-title'>Signup</h2>
 
-    <form className="form signup-form ">
-      <div className="form-group">
-        <label htmlFor="name-signup">Username:</label>
-        <input className="form-input" type="text" id="name-signup" placeholder="Username"/>
-      </div>
+    <form className="form signup-form " action="/api/user/register" method='post'>
       <div className="form-group">
         <label htmlFor="name-signup">name:</label>
-        <input className="form-input" type="text" id="name-signup " placeholder="name" />
+        <input className="form-input" type="text" id="name-signup " placeholder="name"  className="form-input" 
+          type="text" 
+          id="name-register" 
+          value={name}
+          name="name"
+          onChange={handleInputChange}
+          placeholder="name"/>
       </div>
       <div className="form-group">
         <label htmlFor="email-signup">email:</label>
-        <input className="form-input" type="text" id="email-signup" placeholder="email"/>
+        <input className="form-input" type="text" id="email-signup" placeholder="email"
+         className="form-input" 
+         type="email" 
+         id="email-signup" 
+         value={newEmail}
+         name="newemail"
+         onChange={handleInputChange}
+         placeholder="email"/>
       </div>
       <div className="form-group">
         <label htmlFor="password-signup">password:</label>
-        <input className="form-input" type="password" id="password-signup" placeholder="password"/>
-
-      </div>
-      <div>
-       <button id="upload_widget" className="cloudinary-button">
-        Upload files
-      </button>
+        <input className="form-input" type="password" id="password-signup" placeholder="password"
+        value={newPassword}
+        name="newpassword"
+        onChange={handleInputChange}
+        placeholder="password" />
 
       </div>
       
