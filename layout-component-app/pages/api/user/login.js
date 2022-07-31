@@ -4,23 +4,18 @@ import User from '../../../models/user'
 connectDB()
 
 export default async function handler (req, res) {
-
     const {email, password} = req.body
-    const user = User.findOne({email, password})
-    if(!user) {
-        res.json({status: 'unable to find user'})
-    } else {
-        res.redirect('/login')
-    }
     try {
+        let user = await User.findOne({email, password})
        
-        const user = User.create(req.body);
-        res.redirect('/profile')
         if(!user) {
-            return res.json({code: 'user not created'})
+            res.json({status: 'unable to find user'})
+        } else {
+            res.redirect('/profile')
         }
     } catch(error) {
-       res.status(400).json({status: 'not able to create user'})
+        console.log(error)
+       res.status(400).json(error)
     }
      
 }

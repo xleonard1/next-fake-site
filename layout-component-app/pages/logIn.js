@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { checkPassword, validateEmail } from '../utils/helpers';
-import User from '../models/user'
+
 
 export default function Login() {
     const [email, setEmail] = useState('')
@@ -51,6 +51,8 @@ export default function Login() {
     setPassword('');
     setEmail('');
     setName('')
+    setNewEmail('')
+    setNewPassword('')
     };
 
 
@@ -60,7 +62,7 @@ export default function Login() {
   <div className="col-md-6">
     <h2>Login</h2>
 
-    <form  action="/api/user/login" method="post" className="form login-form">
+    <form  className="form login-form" action="/api/user/login" method="post" >
       <div className="form-group">
         <label htmlFor="email-login">email:</label>
         <input 
@@ -84,7 +86,7 @@ export default function Login() {
          placeholder="password" />
       </div>
       <div className="form-group">
-        <button className="btn btn-primary" type="submit" onClick={handleFormSubmit}>login</button>
+        <button className="btn btn-primary" type="submit">login</button>
       </div>
     </form>
   </div>
@@ -99,8 +101,7 @@ export default function Login() {
           id="name-register" 
           value={name}
           name="name"
-          onChange={handleInputChange}
-          placeholder="name"/>
+          onChange={handleInputChange}/>
       </div>
       <div className="form-group">
         <label htmlFor="email-signup">email:</label>
@@ -109,17 +110,15 @@ export default function Login() {
          type="email" 
          id="email-signup" 
          value={newEmail}
-         name="newemail"
-         onChange={handleInputChange}
-         placeholder="email"/>
+         name="email"
+         onChange={handleInputChange}/>
       </div>
       <div className="form-group">
         <label htmlFor="password-signup">password:</label>
         <input className="form-input" type="password" id="password-signup" placeholder="password"
         value={newPassword}
-        name="newpassword"
-        onChange={handleInputChange}
-        placeholder="password" />
+        name="password"
+        onChange={handleInputChange} />
 
       </div>
       

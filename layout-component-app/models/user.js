@@ -8,18 +8,17 @@ var user = new Schema(
   {
   name: {
     type: String,
+    required: true,
   },
   email: {
     type: String,
+    required: true,
     match: [/.+@.+\..+/, 'Must use a valid email address'],
   },
   password: {
     type: String,
+    required: true,
   },
-  since: {
-    type: Date,
-    default: Date.now
-  }
  },
  {
   toJSON: {
