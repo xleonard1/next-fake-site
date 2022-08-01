@@ -1,10 +1,11 @@
 {
   "private": true,
   "scripts": {
-    "dev": "node ./test-migration.js && next dev",
-    "build": "node ./test-migration.js && next build",
+    "dev": "next dev",
+    "build": "next build",
     "export": "next export",
     "start": "next start"
+    
   },
   "homepage": "https://gitname.github.io/react-gh-pages",
   "dependencies": {
