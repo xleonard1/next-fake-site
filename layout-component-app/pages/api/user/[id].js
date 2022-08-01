@@ -4,7 +4,7 @@ import User from '../../../models/user';
 export default async function handler (req, res) {
 if(req.method === 'GET') {
     try {
-        User.findById({ _id: req.query.id})
+        User.findOne({ _id: req.query.id})
         .select('-__v')
         .then(async (user) =>
           !user
@@ -18,6 +18,6 @@ if(req.method === 'GET') {
        res.status(400).json({success: false})
     }
   }
- 
+
  
 }

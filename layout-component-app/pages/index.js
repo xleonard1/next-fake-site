@@ -17,13 +17,12 @@ import Hero from '../components/Hero'
 export default function Home({data}) {
  
   return (
-    <Layout>
+    <div>
         <Hero/>
         <About props = {data}/>
-        
+      </div>
      
-      
-    </Layout>
+     
   )
 }
 

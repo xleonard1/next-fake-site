@@ -13,10 +13,10 @@ import logo from '../public/assets/logo.png'
 export default function Navigation () {
 
       return (
-        <Navbar fixed="top" collapseOnSelect expand="lg" bg="inherit" variant="light">
+        <Navbar fixed="top" collapseOnSelect expand="lg" bg="light" variant="light">
       <Container>
         <Navbar.Brand href="#">
-          <NavLink href = "about"> 
+          <NavLink href = "/"> 
             <Image className = "logo" src={logo} />
           </NavLink>
         </Navbar.Brand>

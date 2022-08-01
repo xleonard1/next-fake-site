@@ -13,9 +13,7 @@ export default function Hero () {
         <div className ="text-white hero-text">
           <h1 className = 'jumbo-title'> The world's greatest fake site</h1>
           <p className = "jumbo-p">Create the world's greatest fake site and enjoy the breeze of fresh air when you complete</p>
-          <button type="button" className = "hero-btn rounded-pill btn btn-primary btn-lg">
-              Do Something Awesome
-          </button>
+          <a href="/logIn" className=" hero-btn  rounded-pill btn btn-primary btn-primary btn-lg active" role="button" aria-pressed="true">Do something awesome</a>
         </div>
       </div>
     </div>

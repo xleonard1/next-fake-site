@@ -33,19 +33,7 @@ export default function Login() {
     const handleFormSubmit = (e) => {
       e.preventDefault();
 
-    // First we check to see if the email is not valid or if the userName is empty. If so we set an error message to be displayed on the page.
-    if (!validateEmail(email)) {
-      setErrorMessage('invalid inputs');
-      // We want to exit out of this code block if something is wrong so that the user can correct it
-      return;
-      // Then we check to see if the password is not valid. If so, we set an error message regarding the password.
-    }
-    if (!checkPassword(password)) {
-      setErrorMessage(
-        `choose correct password`
-      );
-      return;
-    }
+    
 
     // If everything goes according to plan, we want to clear out the input after a successful registration.
     setPassword('');
@@ -57,10 +45,10 @@ export default function Login() {
 
 
     return (
-        <div className = "form-container container">
+        <div className = "form-container container credentials-form">
         <div className="row">
   <div className="col-md-6">
-    <h2>Login</h2>
+    <h2 className = 'login-form-title'>Login</h2>
 
     <form  className="form login-form" action="/api/user/login" method="post" >
       <div className="form-group">
