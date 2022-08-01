@@ -1,0 +1,22 @@
+@font-face {
+  font-family: GraublauWeb;
+  font-weight: bold;
+  src: url("./public/fonts//SourceSansPro-Regular.otf") format("opentype");
+}
+
+
+
+
+#__next {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 100vh;
+  font-family: GraublauWebb;
+}
+
+body {
+  margin: 0;
+  font-family: GraublauWebb;
+ 
+}
