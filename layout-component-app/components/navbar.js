@@ -15,7 +15,7 @@ export default function Navigation () {
       return (
         <Navbar fixed="top" collapseOnSelect expand="lg" bg="light" variant="light">
       <Container>
-        <Navbar.Brand href="#">
+        <Navbar.Brand href="/">
           <NavLink href = "/"> 
             <Image className = "logo" src={logo} />
           </NavLink>
@@ -26,7 +26,7 @@ export default function Navigation () {
           </Nav>
           <Nav>
           <NavLink href="/logIn">Account</NavLink>
-          <NavLink href="/">Help</NavLink>
+          <NavLink href="/contact" disabled>Help</NavLink>
             
           </Nav>
         </Navbar.Collapse>

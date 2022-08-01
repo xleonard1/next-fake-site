@@ -52,10 +52,10 @@ export default function Profile() {
                     </div>
 
                     
-                    <div class="buttons">
+                    <div className="buttons">
                         
-                        <button class="btn btn-outline-primary px-4">Message</button>
-                        <button class="btn btn-primary px-4 ms-3">Contact</button>
+                        <button className="btn btn-outline-primary px-4">Message</button>
+                        <button className="btn btn-primary px-4 ms-3">Contact</button>
                     </div>
                     
                     

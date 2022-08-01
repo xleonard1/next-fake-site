@@ -1,5 +1,5 @@
 
-import Layout from '../components/layout'
+import Layout from './layout'
 import React, {useState, useEffect} from 'react'
 import User from '../models/user'
 
@@ -32,9 +32,9 @@ return (
        </div> 
        
        <div className= 'col'>
-         <div class="card">
+         <div className="card">
            <div className="iframe-ratio ratio ratio-1x1">
-           <iframe src={`//player.vimeo.com/video/${id}`}  Height = "200"></iframe>
+           <iframe src={`//player.vimeo.com/video/${id}`}  height = "200"></iframe>
            </div>
            
           </div>

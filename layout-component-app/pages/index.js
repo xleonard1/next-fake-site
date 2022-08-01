@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Layout from '../components/layout'
 import Navbar from '../components/navbar'
-import About from './about'
+import About from '../components/about'
 import Contact from './contact'
 import Hero from '../components/Hero'
 
