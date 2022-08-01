@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import Image from 'next/image'
 import stockimage from '../public/assets/stockimage.png'
+import { prefix } from '../../utils/prefix.js';
 import User from '../models/user'
 
 
@@ -38,7 +39,7 @@ export default function Profile() {
             <div className="card p-3 py-4">
                 
                 <div className="text-center">
-                    <Image src={stockimage} width="100" height ="100"class="rounded-circle"/>
+                    <Image src={`${prefix}/${stockimage}`} width="100" height ="100"class="rounded-circle"/>
                 </div>
                 
                 <div className="text-center mt-3">
