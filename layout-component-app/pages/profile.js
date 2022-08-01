@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react'
 import Image from 'next/image'
 import stockimage from '../public/assets/stockimage.png'
+import  {req, res} from './api/user/[id]'
 import User from '../models/user'
 
 
-
+console.log(req);
 
 
 
@@ -12,19 +13,20 @@ import User from '../models/user'
 export default function Profile() {
     const [data, setData] = useState(null)
     const [isLoading, setLoading] = useState(false)
+  
 
-    console.log(data)
+
   
     useEffect(() => {
       setLoading(true)
-      fetch('/api/user/62e6fdde0795bfcfa16caa31')
+      fetch('api/user/62e6fe8e0795bfcfa16caa36')
         .then((res) => res.json())
         .then((data) => {
           setData(data)
           setLoading(false)
         })
     }, [])
-    console.log(data)
+   
  
     if (isLoading) return <p>Loading...</p>
     if (!data) return <p>No profile data</p>
